@@ -1,0 +1,31 @@
+*   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#gallery-grid  {
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    height: 100vh;
+}
+
+#thumbnail-container     {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.full-screen-container  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.fullscreen-image   {
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+}

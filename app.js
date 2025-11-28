@@ -20,9 +20,31 @@ const imageData = [
 
 const thumbnailContainer = document.getElementById("thumbnail-container");
 
+function createThumbnails() {
 for (let i = 0; i < imageData.length; i++)  {
     const imageSky = document.createElement("img");
     imageSky.src = imageData[i].imageSrc;
-    imageData.alt = imageData[i].imageAlt;
+    imageSky.alt = imageData[i].imageAlt;
+    imageSky.className= "thumbnails";
+
+    imageSky.addEventListener( "click", function() {
+        createFullScreenImages(imageData[i]);
+    });
+
     thumbnailContainer.appendChild(imageSky);
-}
+};
+};
+
+function createFullScreenImages(imageObj)    {
+    const fullscreenContainer = document.querySelector("#fullscreen-container");
+    fullscreenContainer.innerHTML = "";
+    const fullImage = document.createElement("img");
+    fullImage.src = imageObj.imageSrc;
+    fullImage.alt = imageObj.imageAlt;
+    fullImage.className = "fullscreen-image";
+    fullscreenContainer.appendChild(fullImage);
+};
+
+createThumbnails();
+
+
